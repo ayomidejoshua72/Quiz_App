@@ -3,6 +3,6 @@ import 'package:quizz/welcome_page.dart';
 
 void main() {
   runApp(
-    const WelcomePage()
+    const WelcomePage(),
   );
 }
