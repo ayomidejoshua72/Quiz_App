@@ -13,11 +13,13 @@ void main() {
               ],
             ),
           ),
-          child: const SizedBox(
+          child: SizedBox(
             width: double.infinity,
             child: Column(
               children: [
-                Text("Quiz App")
+                Image.asset("assets/images/quiz-logo.png"),
+                const Text("Test yourself with the flutter basic questions!")
+                
               ],
             ),
           ),
