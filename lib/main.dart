@@ -19,9 +19,10 @@ void main() {
               children: [
                 Image.asset("assets/images/quiz-logo.png"),
                 const Text("Test yourself with the flutter basic questions!"),
-                OutlinedButton(
+                OutlinedButton.icon(
+                  icon: const Icon(Icons.arrow_right_alt),
                   onPressed: () {},
-                  child: const Text("Start quiz"),
+                  label: const Text("Start quiz"),
                 )
               ],
             ),
