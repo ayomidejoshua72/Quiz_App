@@ -18,8 +18,11 @@ void main() {
             child: Column(
               children: [
                 Image.asset("assets/images/quiz-logo.png"),
-                const Text("Test yourself with the flutter basic questions!")
-                
+                const Text("Test yourself with the flutter basic questions!"),
+                OutlinedButton(
+                  onPressed: () {},
+                  child: const Text("Start quiz"),
+                )
               ],
             ),
           ),
