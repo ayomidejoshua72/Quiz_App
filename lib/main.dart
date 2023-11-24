@@ -17,8 +17,17 @@ void main() {
             width: double.infinity,
             child: Column(
               children: [
-                Image.asset("assets/images/quiz-logo.png"),
+                Image.asset(
+                  "assets/images/quiz-logo.png",
+                  width: 300,
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
                 const Text("Test yourself with the flutter basic questions!"),
+                const SizedBox(
+                  height: 40,
+                ),
                 OutlinedButton.icon(
                   icon: const Icon(Icons.arrow_right_alt),
                   onPressed: () {},
