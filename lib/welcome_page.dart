@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+  const WelcomePage(this.activePage, {super.key});
+
+  final Function() activePage;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,7 @@ class WelcomePage extends StatelessWidget {
           OutlinedButton.icon(
             icon: const Icon(Icons.arrow_right_alt),
             style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
-            onPressed: () {},
+            onPressed: activePage,
             label: const Text("Start quiz"),
           )
         ],

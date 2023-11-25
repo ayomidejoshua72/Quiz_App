@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizz/questions_page.dart';
 import 'package:quizz/welcome_page.dart';
 
 class QuizApp extends StatefulWidget {
@@ -9,8 +10,21 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizAppState extends State<QuizApp> {
+  var activePage = "startPage";
+
+  void switchPage () {
+    setState(() {
+      activePage = "welcomePage";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    Widget currentPage = WelcomePage(switchPage);
+    if (activePage == "welcomePage"){
+      currentPage = const QuestionsPage();
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -20,9 +34,11 @@ class _QuizAppState extends State<QuizApp> {
                 Color.fromARGB(255, 51, 3, 78),
                 Color.fromARGB(255, 128, 7, 184)
               ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
             ),
           ),
-          child: const WelcomePage(),
+          child: currentPage,
         ),
       ),
     );
