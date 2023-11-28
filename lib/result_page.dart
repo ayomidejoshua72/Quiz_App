@@ -59,11 +59,15 @@ class ResultPage extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            TextButton(
+            OutlinedButton.icon(
               onPressed: () {
                 restartQuiz();
               },
-              child: const Text("Restart Quiz"),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: Colors.white,
+              ),
+              icon: const Icon(Icons.refresh),
+              label: const Text("Restart Quiz"),
             ),
           ],
         ),
