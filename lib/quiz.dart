@@ -26,7 +26,6 @@ class _QuizAppState extends State<QuizApp> {
 
     if (pickedAnswers.length == questions.length) {
       setState(() {
-        pickedAnswers = [];
         activePage = "resultPage";
       });
     }
@@ -38,6 +37,13 @@ class _QuizAppState extends State<QuizApp> {
     });
   }
 
+  void startQuizAgain() {
+    setState(() {
+      pickedAnswers = [];
+      activePage = "startPage";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget currentPage = WelcomePage(switchPage);
@@ -45,13 +51,14 @@ class _QuizAppState extends State<QuizApp> {
       currentPage = QuestionsPage(
         onSelectAnswer: pickAnswer,
       );
-    } 
-    
+    }
+
     if (activePage == "resultPage") {
-      currentPage = ResultPage(chosenAnswers: pickedAnswers,);
-    } 
-
-
+      currentPage = ResultPage(
+        chosenAnswers: pickedAnswers,
+        restartQuiz: startQuizAgain,
+      );
+    }
 
     return MaterialApp(
       home: Scaffold(
