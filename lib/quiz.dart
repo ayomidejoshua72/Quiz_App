@@ -31,16 +31,11 @@ class _QuizAppState extends State<QuizApp> {
     }
   }
 
-  void restartQuiz() {
-    setState(() {
-      activePage = "welcomePage";
-    });
-  }
 
   void startQuizAgain() {
     setState(() {
       pickedAnswers = [];
-      activePage = "startPage";
+      activePage = "welcomePage";
     });
   }
 
